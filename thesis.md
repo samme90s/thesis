@@ -27,7 +27,7 @@ som är redan utforskat kring (hitta "research gap")
 
 ### Argumentering Struktur
 
-1. Summaries
+1. Summering
 2. Positionering
 3. Motivering
 
