@@ -1,5 +1,9 @@
 # Thesis
 
+## Research Gap
+
+Arbetsorderkategorisering med hjälp av maskinlärning där vi jämför resultatet och kostnader från en LLM med traditionella metoder.
+
 ## Prioriteringar
 
 1. Smalna av område
@@ -10,9 +14,9 @@
 ## Studieplan
 
 1. Boka möte med "supervisor" (en gång i veckan)
-    - Beskriv vad vi har gjort
-    - Sammanställa minst tre frågor
-    - Beskriv det vi kommer att göra fram tills nästa möte
+   - Beskriv vad vi har gjort
+   - Sammanställa minst tre frågor
+   - Beskriv det vi kommer att göra fram tills nästa möte
 
 ## Workshop (Introduction & Choosing Subject)
 
@@ -21,7 +25,7 @@ Vilka algoritmer har använts tidigare
 
 Hur har algoritmerna utvärderats av författarna?
 
-Sub-områden av klassificiering och kolla om det inte finns ett subområde 
+Sub-områden av klassificiering och kolla om det inte finns ett subområde
 som är redan utforskat kring (hitta "research gap")
 
 ### Argumentering Struktur
@@ -29,4 +33,3 @@ som är redan utforskat kring (hitta "research gap")
 1. Summering (Förklarar området)
 2. Positionering (Hur ställer vi oss till det som beskrivs i summeringen (visa vart det finns ett knowledge gap)
 3. Motivering (Varför positionerar vi oss på det sättet och finns det någon fortsättning)
-
