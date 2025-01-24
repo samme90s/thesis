@@ -33,3 +33,11 @@ som är redan utforskat kring (hitta "research gap")
 1. Summering (Förklarar området)
 2. Positionering (Hur ställer vi oss till det som beskrivs i summeringen (visa vart det finns ett knowledge gap))
 3. Motivering (Varför positionerar vi oss på det sättet och finns det någon fortsättning)
+
+## Query Strings for Databases
+
+- naive bayes text classification for work orders
+- "machine learning" AND ("text classification" OR "text categorization") AND "work order" literature review
+- naive bayes text classification for "work orders"
+- machine learning ("naive bayes", svc, random forest) text "classification" compared to "llm"
+- "naive bayes" text categorization or classification "compared\*" with "llm"
