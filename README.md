@@ -44,4 +44,4 @@ som är redan utforskat kring (hitta "research gap")
 
 ## Workshop 2
 
-- Kolla över om det finns text classifiering med hjälp av LLM
+- Kolla över om det finns text classifiering/kategorisering med hjälp av LLM
