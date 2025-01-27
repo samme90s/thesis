@@ -41,3 +41,7 @@ som är redan utforskat kring (hitta "research gap")
 - naive bayes text classification for "work orders"
 - machine learning ("naive bayes", svc, random forest) text "classification" compared to "llm"
 - "naive bayes" text categorization or classification "compared\*" with "llm"
+
+## Workshop 2
+
+- Kolla över om det finns text classifiering med hjälp av LLM
