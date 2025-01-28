@@ -1,12 +1,5 @@
 # Thesis
 
-## Prioriteringar
-
-1. Kolla över om det finns text classifiering/kategorisering med hjälp av LLM
-2. Hitta minst fem journaler eller "conference papers" på området
-3. SPP (Student Project Proposal) bakgrund och introduktion.
-4. Verifiera metodologik med "supervisor"
-
 ## Studieplan
 
 1. Boka möte med "supervisor" (en gång i veckan)
@@ -24,6 +17,7 @@
 3. Motivering
    (Varför positionerar vi oss på det sättet och finns det någon fortsättning)
 
+## Alternativ för Metod
 
 Arbeta med metoden för att göra det intressant
 
@@ -43,3 +37,11 @@ Exempel 2:
 1. Ge LLM "predefined" kategorier
 2. Låt LLM kategorisera work orders
 3. Verkar dessa kategorier rimliga?
+
+## Sökfrågor
+
+- using "LLM" to "categorize*" text
+
+## Länkar
+
+- https://arxiv.org/abs/2410.00927
