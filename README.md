@@ -41,7 +41,3 @@ Exempel 2:
 ## Sökfrågor
 
 - using "LLM" to "categorize*" text
-
-## Länkar
-
-- https://arxiv.org/abs/2410.00927
