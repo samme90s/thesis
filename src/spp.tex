@@ -1,10 +1,17 @@
+% Fundamental framework for your document structure
 \documentclass{article}
-\usepackage[utf8]{inputenc}
+% Needed for your colored text boxes in the elevator pitch
+% (\textcolor{green}{...} etc.)
 \usepackage{xcolor}
+% Required for PDF hyperlinks and proper PDF metadata
+% (especially important when combined with natbib)
 \usepackage{hyperref}
+% Crucial for your citation management 
+% (\cite commands) and bibliography style
+\usepackage[numbers,sort&compress]{natbib}
 
 \title{Student Project Proposal}
-\author{Hampus Tuisku \and Samuel Svensson}
+\author{Samuel Svensson \and Hampus Tuisku}
 \date{\today}
 
 \begin{document}
@@ -85,7 +92,8 @@ Automated Text Categorization for Work Orders using LLM
 
 % Description of the background of the research and the application areas of your work. 
 
-% Define both application area and research area. Think funnel so go from broad to specific (as discussed during Workshop 1). 
+% Define both application area and research area. Think funnel so go from broad to specific
+% (as discussed during Workshop 1).
 % Application areas = areas outside of CS that CS is applied to.
 % Research area = area within CS that you do a knowledge contribution to.
 
@@ -101,20 +109,29 @@ Automated Text Categorization for Work Orders using LLM
 
 % If you are going to develop something (eg. prototype, app, web app, …) then describe the closest solutions.
 % If there are many have a table. You can show the important features.
-\subsection{LLM (Large Language Model)}
+
+\subsubsection{Work Orders}
+
+Work orders is a document that outlines the details of a maintenance task or the material and more required
+to complete such task \cite{ibm2023}.
+
+\colorbox{yellow}{add more here...}
+
+\subsubsection{Automated Text Categorization}
 
 LLMs or often described as AI nowadays and allows the user to prompt it with instructions or questions.
 
-\subsubsection{Text Categorization}
-\colorbox{yellow}{Explain the area...}
+\colorbox{yellow}{continue with a short description of LLM and add source/reference}
 
 Assigning text to pre-defined categories is the key of text categorization
 (sometimes named classification, but we will stick to the former).
-These may include areas such as topic labeling or news categorization [2].
+These may include areas such as topic labeling or news categorization \cite{zhang2024}.
 It has further proved that the latest LLMs currently posses great generative capabilities, understanding
 and reasoning within language(s).
 They therefore have become more efficient than humans when it comes to NLP (Natural Language Processing)
 tasks.
+
+\colorbox{yellow}{continue with the explaination of text categorization}
 
 \subsubsection{Related Work}
 \colorbox{yellow}{Reveal other studies and their conclusions, position ourselves and motivate...}
@@ -137,7 +154,7 @@ tasks.
 
 % Is there active research in this area? Answer this question by looking at when the papers were published. 
 
-Huang and He [1] explain the cost of manual labor when it comes to tagging and categorizing text.
+Huang and He \cite{huang2024} explain the cost of manual labor when it comes to tagging and categorizing text.
 Furthermore, the fine-tuning and choice of parameters can influence the final behaviour of the trained
 ML model.
 They explain how the latest LLMs have showcased "remarkable reasoning performance across a wide range of
@@ -145,14 +162,7 @@ NLP tasks".
 We aim to follow this trail and further analyze the effeciency and performance of categoring text or as in our
 case work orders.
 
-\section{\refname}
-
- [1] C. Huang and G. He, "Text Clustering as Classification with LLMs,"
-arXiv, Sep. 2024, revised Jan. 2025. [Online].
-Available: \url{https://doi.org/10.48550/arXiv.2410.00927}
-
-[2] Y. Zhang et. al., "Pushing The Limit of LLM Capacity for Text Classification,"
-arXiv, Feb. 2024. revised Jan. 2025. [Online].
-Available: \url{http://arxiv.org/abs/2402.07470}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
 
 \end{document}
