@@ -1,5 +1,7 @@
 % Fundamental framework for your document structure
 \documentclass{article}
+% Reduces overfull boxes
+\usepackage{microtype}
 % Needed for your colored text boxes in the elevator pitch
 % (\textcolor{green}{...} etc.)
 \usepackage{xcolor}
@@ -42,28 +44,20 @@ We have continous discussions and meetings with the company.
 
 \subsection{Preliminary Title}
 
-Automated Text Categorization for Work Orders using LLM
+Automated Text Categorization for work orders using LLM
 
 \subsection{Elevator Pitch}
 
-\textcolor{green}{
-      Automatic text categorization is an important step when analyzing textual data,
-      and the approach of Large Language Models (LLMs) have emerged as an alternative
-      to the traditional Machine Learning (ML).
-}
-\textcolor{orange}{
-      ML often requires balanced, labeled datasets for effective training
-      and demands significant manual effort, in contrast to LLMs that
-      leverages pre-trained contextual knowledge.
-}
-\textcolor{blue}{
-      We aim to use LLMs to categorize work order (WO) titles and descriptions
-      through a rigorous method,
-}
-\textcolor{red}{
-      and evaluate the impact of different prompts and strategies to find
-      an effective solution to the subject at hand.
-}
+Automatic text categorization is an important step when analyzing textual data,
+and the approach of Large Language Models (LLMs) have emerged as an alternative
+to the traditional Machine Learning (ML).
+ML often requires balanced, labeled datasets for effective training
+and demands significant manual effort, in contrast to LLMs that
+leverages pre-trained contextual knowledge.
+We aim to use LLMs to categorize work order (WO) titles and descriptions
+through a rigorous method,
+and evaluate the impact of different prompts and strategies to find
+an effective solution to the subject at hand.
 
 \subsection{Steps/Milestones/Actions}
 
@@ -90,105 +84,62 @@ Automated Text Categorization for Work Orders using LLM
 
 \subsection{Background}
 
-% Description of the background of the research and the application areas of your work. 
-
-% Define both application area and research area. Think funnel so go from broad to specific
-% (as discussed during Workshop 1).
-% Application areas = areas outside of CS that CS is applied to.
-% Research area = area within CS that you do a knowledge contribution to.
-
-
-% Use references especially on the CS parts.
-
-% Describe the current knowledge or state and describe why a change or new knowledge is needed.
-% Motivate from a societal OR economic OR ethical points of view. 
-
-% Think of what is the target group for your thesis? Try to make this as wide as possible and this
-% target group must be within computer science community. Also make sure it is beyond a specific target
-% ( such as a company).
-
-% If you are going to develop something (eg. prototype, app, web app, …) then describe the closest solutions.
-% If there are many have a table. You can show the important features.
-
 In many industries today, working with and handling large quantities of structured and unstructured data is extremely
-important. One example is categorization of work orders in fields such as manufacturing, logistics and maintenance.
-\bigskip
+important. One example is categorization of WOs in fields such as manufacturing, logistics and maintenance.
 
-Traditionally, machine learning methods such as Support Vector Machines (SVM), Random Forest and Naïve Bayes classifiers
-have been used for text classification task. These machine learning methods have also been applied to the topic of
+Traditionally, ML methods such as Support Vector Machines (SVM), Random Forest and Naïve Bayes classifiers
+have been used for text classification task. These ML methods have also been applied to the topic of
 this paper, i.e., text classification. These approaches require manual testing and overlooking. This can result in
 problems when it comes to scalability and handling different text formats.
-\bigskip
 
-To address the question if we can't find a more effective solution to this current workflow when dealing with
-text classification, this paper explores the usage of Large Language Models (LLMs) for automated text categorization
-for work orders.
-\colorbox{blue}{startade på en kort introduktion bara varför vi gör detta}
+To address the question if we can't find a more effective solution to this current workflow
+when dealing with text classification, this paper explores the usage of LLMs for automated
+text categorization for WOs.
 
-\subsubsection{Work Orders}
+\colorbox{green}{startade på en kort introduktion bara varför vi gör detta}
 
-Work orders is a document that outlines the details of a maintenance task or the material and more required
+\subsubsection{WOs}
+
+WOs is a document that outlines the details of a maintenance task or the material and more required
 to complete such task \cite{ibm2023}.
-\bigskip
 
-Work orders is a key component in maintenance management in complex facilities. However, many existing companies
-still rely on manual processing, which can lead to mistakes caused by human error. Work orders contain valuable
+WOs is a key component in maintenance management in complex facilities. However, many existing companies
+still rely on manual processing, which can lead to mistakes caused by human error. WOs contain valuable
 data in the form of text, which, if properly utilized, can improve task such as maintenance planing and worker assignments.
-However, the challenge is when the data is unstructured, it complicates their usages in automated systems \cite{li et al.}.
+However, the challenge is when the data is unstructured, it complicates their usages in automated systems \cite{li2023}.
 
-\colorbox{blue}{Vet inte om jag gillar det jag har skrivit om work orders som du ser ovan}
+\colorbox{green}{Vet inte om jag gillar det jag har skrivit om WOs som du ser ovan}
 
 \subsubsection{Automated Text Categorization}
 
 LLMs or often described as AI nowadays and allows the user to prompt it with instructions or questions.
-LLMs leverage pre-trained knowledge, unlike traditional machine learning models, which require
+LLMs leverage pre-trained knowledge, unlike traditional ML models, which require
 manual testing and human intervention. They can analyze data and recognize patterns with minimal
-human intervention. This makes LLMs highly effective in applications like work order categorization.
-\colorbox{blue}{hade svårt att komma på något mer att skriva just här}
-
+human intervention. This makes LLMs highly effective in applications like WO categorization.
+\colorbox{green}{hade svårt att komma på något mer att skriva just här}
 
 \colorbox{yellow}{continue with a short description of LLM and add source/reference}
 
 Assigning text to pre-defined categories is the key of text categorization
 (sometimes named classification, but we will stick to the former).
 These may include areas such as topic labeling or news categorization \cite{zhang2024}.
-It has further proved that the latest LLMs currently posses great generative capabilities, understanding
-and reasoning within language(s).
+It has further proved that the latest LLMs currently posses great generative capabilities,
+understanding and reasoning within language(s).
 They therefore have become more efficient than humans when it comes to NLP (Natural Language Processing)
 tasks.
-\bigskip
 
-Automated Text classification is a machine learning process that involves categorizing documents
+Automated Text classification is a ML process that involves categorizing documents
 into predefined groups by analyzing the content of the text and identifying features that are
 relevant \cite{dalal2011}. By utulizing automated text classification, computer systems
 can use this technique for solving tasks such as spam filtering and document organization.
-\bigskip
 
-\colorbox{blue}{källan gick inte att lägga till i Zotero för mig, länkar den längst ner}
-\bigskip
+\colorbox{green}{källan gick inte att lägga till i Zotero för mig, länkar den längst ner}
 
 \colorbox{yellow}{continue with the explaination of text categorization}
 
 \subsubsection{Related Work}
+
 \colorbox{yellow}{Reveal other studies and their conclusions, position ourselves and motivate...}
-
-% Position yourself in a research area within Computer Science according to instructions given during workshop.
-% So in this section you only focus on CS!!! 
-
-% Minimum two articles published in CS conferences or journals.
-% However do make sure you find the important and most relevant works and that it is enough to motivate a
-% knowledge gap or that your problem is a CS problem.
-
-% Summarize what others have done as well as not have done with one or two sentences.
-% Summarize their conclusion with one or two sentences.
-% Then finally position yourself in relation to these related works eg.
-% “this is close to what I intend to do”, “I build on top of this”,
-% “my work is different from this” as discussed in Workshop 1 and 2. 
-
-% Again make sure this is within CS and on topic of your research area.
-% Check the conference or journal so that it is a scientific CS venue. 
-
-% Is there active research in this area? Answer this question by looking at when the papers were published. 
 
 Huang and He \cite{huang2024} explain the cost of manual labor when it comes to tagging and categorizing text.
 Furthermore, the fine-tuning and choice of parameters can influence the final behaviour of the trained
@@ -196,30 +147,26 @@ ML model.
 They explain how the latest LLMs have showcased "remarkable reasoning performance across a wide range of
 NLP tasks".
 We aim to follow this trail and further analyze the effeciency and performance of categoring text or as in our
-case work orders.
-\bigskip
+case WOs.
 
-Advances have been made recently in Large Language Models (LLMs) when it comes to Natural Language Processing (NLP) tasks,
-such as text classification.
+Advances have been made recently in LLMs when it comes to Natural Language Processing (NLP)
+tasks, such as text classification.
 GPT-4, LLaMA 2, and ChatGLM 2 have shown remarkable performance in various NLP-tasks, including text classification.
 \cite{zhang2024}.
-Our research in this paper will be to discuss and evaluate the efficiency and accuracy of using Large Language Models
-to text classify structured work orders. Unlike previous studies, which focus more on general NLP tasks,
-our paper give an insight into whether LLMs can be fine-tuned to effectively classify structured work orders and compare their
-performance to traditional text classification methods.
-\bigskip
+Our research in this paper will be to discuss and evaluate the efficiency and accuracy of using LLMs
+to text classify structured WOs. Unlike previous studies, which focus more on general NLP tasks,
+our paper give an insight into whether LLMs can be fine-tuned to effectively classify structured WOs and
+compare their performance to traditional text classification methods.
 
-Recent research has demonstrated that transformer-based models, such as Bidirectional Encoder Representations from
-Transformers (BERT) and other domain-specific variants, significantly improve text classification processes trough transfer 
-learning and fine-tuning\cite{Nazyrova2024}. While this study focus on medical text classification, its findings in
- on LLM fine-tuning is releveant for our paper and its research.
+Recent research has demonstrated that transformer-based models,
+such as Bidirectional Encoder Representations from Transformers (BERT) and other domain-specific variants,
+significantly improve text classification processes trough transfer learning and fine-tuning \cite{Nazyrova2024}.
+While this study focus on medical text classification, its findings in on LLM fine-tuning is releveant for our
+paper and its research.
 
-\colorbox{blue}{Denna text tyckte jag blev okej}
+\colorbox{green}{Denna text tyckte jag blev okej}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
-
-% Länken till källan som användes i categoin automated text classification
-% https://www.researchgate.net/publication/266296879_Automatic_Text_Classification_A_Technical_Review
 
 \end{document}
