@@ -2,14 +2,11 @@
 \documentclass{article}
 % Reduces overfull boxes
 \usepackage{microtype}
-% Needed for your colored text boxes in the elevator pitch
-% (\textcolor{green}{...} etc.)
+% Needed for your colored text boxes in the elevator pitch (\textcolor{green}{...} etc.)
 \usepackage{xcolor}
-% Required for PDF hyperlinks and proper PDF metadata
-% (especially important when combined with natbib)
+% Required for PDF hyperlinks and proper PDF metadata (especially important when combined with natbib)
 \usepackage{hyperref}
-% Crucial for your citation management 
-% (\cite commands) and bibliography style
+% Crucial for your citation management (\cite commands) and bibliography style
 \usepackage[numbers,sort&compress]{natbib}
 
 \title{Student Project Proposal}
@@ -89,82 +86,84 @@ important. One example is categorization of WOs in fields such as manufacturing,
 
 Traditionally, ML methods such as Support Vector Machines (SVM), Random Forest and Naïve Bayes classifiers
 have been used for text classification task. These ML methods have also been applied to the topic of
-this paper, i.e., text classification. These approaches require manual testing and overlooking. This can result in
-problems when it comes to scalability and handling different text formats.
+this paper, i.e., text classification. These approaches require manual testing and overlooking.
+% SAM: Förstår inte riktigt här, känns som vi riktar oss mot maskininlärning istället för LLMs,
+% men kan ha förstått fel?
+This can result in problems when it comes to scalability and handling different text formats.
+% SAM: Källa, eftersom det är ett påstående!
 
 To address the question if we can't find a more effective solution to this current workflow
 when dealing with text classification, this paper explores the usage of LLMs for automated
 text categorization for WOs.
+% SAM: Behövs skrivas om för bättre flöde!
 
-\colorbox{green}{startade på en kort introduktion bara varför vi gör detta}
+\subsubsection{Work Orders}
 
-\subsubsection{WOs}
+% SAM: sammanfogade två stycken här, men ändrade inget i texten förutom det jag tidigare skrev.
+WOs is a document that outlines the details of a maintenance task.
+It most commonly contains information regarding the material required to complete such task,
+but also the geographic location, customer etc. \cite{ibm2023}.
+It is a key component in maintenance management in complex facilities.
+However, many existing companies still rely on manual processing,
+which can lead to mistakes caused by human error.
+WOs contain valuable data in the form of text, which, if properly utilized,
+can improve task such as maintenance planing and worker assignments.
+However, the challenge is when the data is unstructured,
+it complicates their usages in automated systems \cite{li2023}.
+% HAMPUS: Vet inte om jag gillar det jag har skrivit om WOs som du ser ovan.
+% SAM: Funderar på om vi ska flytta något till related work här ifrån.
 
-WOs is a document that outlines the details of a maintenance task or the material and more required
-to complete such task \cite{ibm2023}.
+\subsubsection{Large Language Models}
 
-WOs is a key component in maintenance management in complex facilities. However, many existing companies
-still rely on manual processing, which can lead to mistakes caused by human error. WOs contain valuable
-data in the form of text, which, if properly utilized, can improve task such as maintenance planing and worker assignments.
-However, the challenge is when the data is unstructured, it complicates their usages in automated systems \cite{li2023}.
-
-\colorbox{green}{Vet inte om jag gillar det jag har skrivit om WOs som du ser ovan}
+LLMs are a subgroup of AI that work on the knowledge of next word context and are often utilized in
+in the conjunction of allowing the user to prompt it with instructions or questions.
+LLMs leverage pre-trained knowledge, unlike traditional ML models, which require manual testing and human intervention.
+They can analyze data and recognize patterns with minimal human intervention.
+This makes LLMs highly effective in applications like WO categorization \cite{andersson2024}.
+% SAM: Hittade en rätt bra källa kring IKEA och LLMs i samband med "Transaction classification"
+% men förklarade LLMs rätt bra, funderar på om vi ska sno den källan istället för andersson2024
+% som jag använder nu.
 
 \subsubsection{Automated Text Categorization}
 
-LLMs or often described as AI nowadays and allows the user to prompt it with instructions or questions.
-LLMs leverage pre-trained knowledge, unlike traditional ML models, which require
-manual testing and human intervention. They can analyze data and recognize patterns with minimal
-human intervention. This makes LLMs highly effective in applications like WO categorization.
-\colorbox{green}{hade svårt att komma på något mer att skriva just här}
-
-\colorbox{yellow}{continue with a short description of LLM and add source/reference}
-
-Assigning text to pre-defined categories is the key of text categorization
-(sometimes named classification, but we will stick to the former).
+Assigning text to pre-defined categories is the key of text categorization,
+sometimes named classification, but we will stick to the former.
 These may include areas such as topic labeling or news categorization \cite{zhang2024}.
 It has further proved that the latest LLMs currently posses great generative capabilities,
-understanding and reasoning within language(s).
-They therefore have become more efficient than humans when it comes to NLP (Natural Language Processing)
-tasks.
+understanding and reasoning within language(s) as previously mentioned.
+They therefore have become more efficient than humans when it comes to Natural Language Processing (NLP) tasks.
 
 Automated Text classification is a ML process that involves categorizing documents
-into predefined groups by analyzing the content of the text and identifying features that are
-relevant \cite{dalal2011}. By utulizing automated text classification, computer systems
-can use this technique for solving tasks such as spam filtering and document organization.
-
-\colorbox{green}{källan gick inte att lägga till i Zotero för mig, länkar den längst ner}
-
-\colorbox{yellow}{continue with the explaination of text categorization}
+into predefined groups by analyzing the content of the text and identifying features that are relevant.
+By utilizing automated text classification, computer systems can use this technique for solving tasks such as spam filtering and document organization \cite{dalal2011}.
+% SAM: Måste integreras bättre med föregående stycke!
 
 \subsubsection{Related Work}
 
-\colorbox{yellow}{Reveal other studies and their conclusions, position ourselves and motivate...}
-
 Huang and He \cite{huang2024} explain the cost of manual labor when it comes to tagging and categorizing text.
-Furthermore, the fine-tuning and choice of parameters can influence the final behaviour of the trained
-ML model.
+Furthermore, the fine-tuning and choice of parameters can influence the final behaviour of the trained ML model.
 They explain how the latest LLMs have showcased "remarkable reasoning performance across a wide range of
 NLP tasks".
 We aim to follow this trail and further analyze the effeciency and performance of categoring text or as in our
 case WOs.
 
-Advances have been made recently in LLMs when it comes to Natural Language Processing (NLP)
-tasks, such as text classification.
-GPT-4, LLaMA 2, and ChatGLM 2 have shown remarkable performance in various NLP-tasks, including text classification.
-\cite{zhang2024}.
+Advances have been made recently in LLMs when it comes to NLP tasks, such as text classification.
+GPT-4, LLaMA 2, and ChatGLM 2 have shown remarkable performance here \cite{zhang2024}.
 Our research in this paper will be to discuss and evaluate the efficiency and accuracy of using LLMs
 to text classify structured WOs. Unlike previous studies, which focus more on general NLP tasks,
 our paper give an insight into whether LLMs can be fine-tuned to effectively classify structured WOs and
 compare their performance to traditional text classification methods.
+% SAM: Behöver skrivas om för bättre flöde.
 
-Recent research has demonstrated that transformer-based models,
-such as Bidirectional Encoder Representations from Transformers (BERT) and other domain-specific variants,
-significantly improve text classification processes trough transfer learning and fine-tuning \cite{Nazyrova2024}.
+Recent research has demonstrated that transformer-based models, such as
+Bidirectional Encoder Representations from Transformers (BERT) and other domain-specific variants,
+significantly improve text classification processes through transfer learning and fine-tuning \cite{Nazyrova2024}.
 While this study focus on medical text classification, its findings in on LLM fine-tuning is releveant for our
 paper and its research.
+% SAM: Kanske bara BERT istället för hela namnet för att göra det mer lättläst?
+% Dessutom behövs skrivas om för bättre flöde.
 
-\colorbox{green}{Denna text tyckte jag blev okej}
+% HAMPUS: Denna text tyckte jag blev okej
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
