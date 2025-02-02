@@ -81,41 +81,31 @@ an effective solution to the subject at hand.
 
 \subsection{Background}
 
-In many industries today, working with and handling large quantities of structured and unstructured data is extremely
-important. One example is categorization of WOs in fields such as manufacturing, logistics and maintenance.
+In many industries today, working with and handling large quantities of structured and unstructured data is
+extremely important.
+One example is categorization of WOs in fields such as manufacturing, logistics and maintenance.
 
-Traditionally, ML methods such as Support Vector Machines (SVM), Random Forest and Naïve Bayes classifiers
-have been used for text classification task. These ML methods have also been applied to the topic of
-this paper, i.e., text classification. These approaches require manual testing and overlooking.
-% SAM: Förstår inte riktigt här, känns som vi riktar oss mot maskininlärning istället för LLMs,
-% men kan ha förstått fel?
-This can result in problems when it comes to scalability and handling different text formats.
+Therefore we are going to explore if we can find a more effective solution to this current workflow
+when dealing with text classification.
+Traditionally, ML methods such as Support Vector Machines (SVM), Random Forest and Naive Bayes classifiers
+have been used for text classification tasks.
+This paper aims to explore the usage of LLMs for automated text categorization in relation with WOs.
+Compared to the former approaches that requires manual training and configuration.
 % SAM: Källa, eftersom det är ett påstående!
-
-To address the question if we can't find a more effective solution to this current workflow
-when dealing with text classification, this paper explores the usage of LLMs for automated
-text categorization for WOs.
-% SAM: Behövs skrivas om för bättre flöde!
 
 \subsubsection{Work Orders}
 
-% SAM: sammanfogade två stycken här, men ändrade inget i texten förutom det jag tidigare skrev.
 WOs is a document that outlines the details of a maintenance task.
+This data comes in the form of text and properly utilized can be the key component when categorizing using LLMs.
 It most commonly contains information regarding the material required to complete such task,
-but also the geographic location, customer etc. \cite{ibm2023}.
-It is a key component in maintenance management in complex facilities.
-However, many existing companies still rely on manual processing,
-which can lead to mistakes caused by human error.
-WOs contain valuable data in the form of text, which, if properly utilized,
-can improve task such as maintenance planing and worker assignments.
-However, the challenge is when the data is unstructured,
-it complicates their usages in automated systems \cite{li2023}.
-% HAMPUS: Vet inte om jag gillar det jag har skrivit om WOs som du ser ovan.
-% SAM: Funderar på om vi ska flytta något till related work här ifrån.
+but also the geographic location, customer etc.
+Today, many companies still rely on manual processing, which often leads to mistakes.
+Throughout our work we will focus on providing a better solution than the current manual processing,
+by using LLMs \cite{ibm2023} \cite{li2024}.
 
 \subsubsection{Large Language Models}
 
-LLMs are a subgroup of AI that work on the knowledge of next word context and are often utilized in
+LLMs are a subgroup of AI that work on the knowledge of next word context and are often utilized
 in the conjunction of allowing the user to prompt it with instructions or questions.
 LLMs leverage pre-trained knowledge, unlike traditional ML models, which require manual testing and human intervention.
 They can analyze data and recognize patterns with minimal human intervention.
@@ -129,13 +119,15 @@ This makes LLMs highly effective in applications like WO categorization \cite{an
 Assigning text to pre-defined categories is the key of text categorization,
 sometimes named classification, but we will stick to the former.
 These may include areas such as topic labeling or news categorization \cite{zhang2024}.
+% SAM: Kanske ta bort denna källan och byta den med en annan.
 It has further proved that the latest LLMs currently posses great generative capabilities,
 understanding and reasoning within language(s) as previously mentioned.
 They therefore have become more efficient than humans when it comes to Natural Language Processing (NLP) tasks.
 
 Automated Text classification is a ML process that involves categorizing documents
 into predefined groups by analyzing the content of the text and identifying features that are relevant.
-By utilizing automated text classification, computer systems can use this technique for solving tasks such as spam filtering and document organization \cite{dalal2011}.
+By utilizing automated text classification, computer systems can use this technique for solving tasks such as spam
+filtering and document organization \cite{dalal2011}.
 % SAM: Måste integreras bättre med föregående stycke!
 
 \subsubsection{Related Work}
