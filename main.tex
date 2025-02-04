@@ -1,0 +1,25 @@
+% Fundamental framework for your document structure
+\documentclass{article}
+% Reduces overfull boxes
+\usepackage{microtype}
+% Needed for your colored text boxes in the elevator pitch (\textcolor{green}{...} etc.)
+\usepackage{xcolor}
+% Required for PDF hyperlinks and proper PDF metadata (especially important when combined with natbib)
+\usepackage{hyperref}
+% Crucial for your citation management (\cite commands) and bibliography style
+\usepackage[numbers,sort&compress]{natbib}
+
+\title{Text classification using large lanugage models for work orders}
+\author{Samuel Svensson \and Hampus Tuisku}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\input{spp.tex}
+\input{introduction.tex}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

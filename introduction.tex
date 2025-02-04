@@ -1,0 +1,85 @@
+\section{Introduction}
+
+This section introduces the different aspects of the research and to provide the
+main scope of the paper.
+It will describe large language models (LLMs) and their applications in text
+classification.
+Since we are collaborating with UPTILT who are working on delivering a program
+to customers within the service
+business.
+They aim to deliver a product meant to keep track of materials and hourly work
+to automate the delivery of invoices and offers to the customer.
+Due to the collaboration, we will mainly discuss importance of classifying
+and in the context of work orders (WOs), but also provide a general conclusion
+on the topic and contribute to the field of text classification and natural
+language processing (NLP).
+
+\subsection{Background}
+
+In many industries today, working with and handling large quantities of
+structured and unstructured data is extremely important.
+One example is text classification which orders text based on their content to a
+specific label.
+
+% Lite konstig mening
+Traditionally, ML methods such as Support Vector Machines (SVM), Random Forest
+and Naive Bayes classifiers have been used for text classification tasks,
+and automating this process can be done by using one of the former models.
+
+Training a model means analyzing the content of the text and identifying
+features that are relevant, so computer systems can, for example, use this
+technique for identifying spam and filtering documents \cite{dalal2011}.
+Compared to the former approaches that requires manual training and configuration,
+this paper aims to find a more effective solution when dealing with text classification
+and exploring the usage of LLM in relation with WOs.
+
+\subsubsection{Large language models}
+
+LLMs are a subgroup of AI that work on the knowledge of next word context and are often utilized
+in the context of allowing the user to prompt it with instructions or questions.
+LLMs utilize pre-trained knowledge, unlike traditional ML models, which require manual training,
+balanced datasets and human interaction.
+LLMs can analyze data and recognize patterns with minimal human interaction.
+This makes LLMs highly effective in applications like (NLP) \cite{andersson2024},
+and in our case classification of WOs.
+
+\subsubsection{Text classification of work orders}
+
+WOs is a document that outlines the details of a maintenance task.
+This data comes in the form of text and can through proper utilization be the key component when categorizing using LLMs.
+WOs most commonly contains information regarding the material required to complete such task,
+but also the geographic location, customer etc.
+Today, many companies still rely on manual processing, which often leads to mistakes.
+Throughout our work we will focus on providing a better solution than the current manual processing,
+by using LLMs \cite{ibm2023} \cite{li2024}.
+
+Assigning text to pre-defined categories is the key of text classification,
+sometimes named categorization, but we will stick to the former.
+These may include areas such as topic labeling or news classification.
+It has been further proven that the latest LLMs currently posses great generative capabilities,
+along with understanding and reasoning within language(s) as previously mentioned.
+They therefore have become more efficient than humans when it comes to NLP tasks \cite{zhang2024}.
+
+\subsubsection{Related Work}
+
+Huang and He \cite{huang2024} explain the cost of manual labor when it comes to tagging and categorizing text.
+Furthermore, the fine-tuning and choice of parameters can influence the final behavior of the trained ML model.
+They explain how the latest LLMs have showcased "remarkable reasoning performance across a wide range of
+NLP tasks".
+We aim to follow this trail and further analyze the efficiency and performance of categorizing text within the
+context of WOs.
+
+\bigskip
+Recent advances in LLMs have shown that they can be fine-tuned to effectively classify structured data.
+For example, GPT-4, LLaMA 2, and ChatGLM 2 have shown remarkable performance in text classification \cite{zhang2024}.
+We will be discussing and evaluating the efficiency and accuracy of using LLMs
+to classify structured WOs, unlike previous studies, which focuses more on general NLP tasks.
+Our paper gives an insight into whether LLMs can be used with correct prompting to classify WOs.
+
+\bigskip
+Current research has demonstrated that transformer-based models
+(a neural network architecture, meaning it learns by tracking relationships between words \cite{merritt2022}),
+such as BERT and other domain-specific variants, significantly improve text classification processes through
+transfer learning and fine-tuning \cite{nazyrova2024}.
+While Nazyrova et al. focuses on medical text classification and our focus lies within WO classification,
+their findings on the topic of fine-tuning LLMs is relevant for our paper and its research.
