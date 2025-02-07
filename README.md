@@ -1,43 +1,53 @@
 # Thesis
 
-## Studieplan
+## Study plan
 
-1. Boka möte med "supervisor" (en gång i veckan)
-   - Beskriv vad vi har gjort
-   - Sammanställa minst tre frågor
-   - Beskriv det vi kommer att göra fram tills nästa möte
+1. Schedule a meeting with the supervisor (once a week)
+   - Describe what I have done.
+   - Compile at least three questions.
+   - Ask what is expected to be done until the next meeting and outline this!
 
-### Argumentering Struktur
+### Argumentation structure
 
-1. Summering
-   (Förklarar området)
-2. Positionering
-   (Hur ställer vi oss till det som beskrivs i summeringen,
-   visa vart det finns ett knowledge gap)
-3. Motivering
-   (Varför positionerar vi oss på det sättet och finns det någon fortsättning)
+1. Summary  
+   (Explain the area of focus)
+2. Positioning  
+   (How do I position ourselves in relation to what is described in the summary?
+   Highlight where there is a knowledge gap.)
+3. Justification  
+   (Why do I position ourselves this way, and is there any follow-up to consider?)
 
-## Alternativ för Metod
+## Method
 
-Arbeta med metoden för att göra det intressant
+### Tools
 
-Testa olika prompts för att se om resultatet förändras
+- Ragas metrics
+- Evaluation of LLMs
 
-Tryck på att det är specifikt work orders och "leverage" att
-det är ett viss typ av struktur till skillnad från klassisk text
+### Alternatives
 
-Delar i metoden som skulle kunna vara relevant:
+Work on the method to make it engaging.
 
-Exempel 1:
-1. Ta fem personer som får 20 olika work orders och får kategorisera dem
-2. Låt LLM kategorisera samma work orders
-3. Jämför resultatet
+Test different prompts to see if the results change.
+For example, should we use a series of prompts or one?
 
-Exempel 2:
-1. Ge LLM "predefined" kategorier
-2. Låt LLM kategorisera work orders
-3. Verkar dessa kategorier rimliga?
+Emphasize that these are specific work orders and leverage the fact that there is a
+particular type of structure, as opposed to classic text.
 
-## Sökfrågor
+Parts of the method that could be relevant:
 
-- using "LLM" to "categorize*" text
+Example 1:
+
+1. Select five individuals who receive 20 different work orders and categorize them.
+2. Have an LLM categorize the same work orders.
+3. Compare the results.
+
+Example 2:
+
+1. Provide predefined categories to the LLM.
+2. Let the LLM categorize work orders.
+3. Assess whether these categories seem reasonable.
+
+## Search prompts
+
+- Using LLM to categorize text
