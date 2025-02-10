@@ -11,7 +11,8 @@
 %
 % Your methodology section should generally be written in the PAST TENSE!
 
-\subsection{Introduction}
+% --------------------------------------------
+\subsection{Experiment design}
 % Step 1:
 % Methodological approach
 %
@@ -22,37 +23,35 @@
 %
 % How data was collected?
 % Primary (collect by myself) or Secondary (collected by someone else) data:
-We have conducted a quantitative (numerical) research study to evaluate the performance
-of Deepseek and Deepseek (reasoning) on the dataset provided by UPTILT. We have
-collected the accuracy, precision, recall, F1 score, and execution time of the
-two models. We used the primary method of collecting data with the tools and procedures
-described in the following sections.
+We conducted a quantitative experimental study to evaluate the performance of two
+models, Deepseek and Deepseek (reasoning), on the UPTILT dataset. Metrics such
+as accuracy, precision, recall, F1 score, and execution time were collected
+using primary data obtained through controlled experiments. This approach was chosen
+to ensure measurable and reproducible results.
 
-\subsection{Independent variables}
+\subsubsection{Independent variables}
 % Not sure if this is correct outlining the variables like this but may be useful
 % to get the general idea of what we are working with:
-\begin{itemize}
-    \item Dataset
+\begin{center}
+    \begin{tabular}{| l | l |}
+        Dataset & The UPTILT dataset used for training and evaluation.     \\
+        Models  & The different models used (both LLMs and ML algorithms). \\
+    \end{tabular}
+\end{center}
 
-    \item Deepseek
+\subsubsection{Dependent variables}
 
-    \item Deepseek (reasoning)
-\end{itemize}
+\begin{center}
+    \begin{tabular}{| l | l |}
+        Accuracy            & The overall correctness of the model.           \\
+        Precision           & The correctness of positive predictions.        \\
+        Recall              & The ability to identify all relevant instances. \\
+        F1 score            & A combined metric of precision and recall.      \\
+        Execution time (ms) & The computational efficiency of each model.     \\
+    \end{tabular}
+\end{center}
 
-\subsection{Dependent variables}
-
-\begin{itemize}
-    \item Accuracy % Measures overall correctness
-
-    \item Precision % Measures the correctness of positive predictions; not the same as accuracy
-
-    \item Recall
-
-    \item F1 score
-
-    \item Execution time (ms)
-\end{itemize}
-
+% --------------------------------------------
 \subsection{Data Collection}
 % Step 2:
 % Methods of data collection
@@ -60,9 +59,25 @@ described in the following sections.
 % The sampling method or critera
 % The tools, procedures, and materials
 % How variables were measured
+%
+% Explain the table structure here as well!
+% See Oxana's model/image in Slack.
 \textcolor{blue}{Explain the tools and methods used to collect the data for our
 result. Furthermore, explain the variables that were measured. See comments...}
 
+\subsubsection{Models}
+% Specify the LLMs and ML models/algorithms used (e.g., GPT-4o, Deepseek, Naive Bayes).
+%
+% Explain why these models were chosen and how they are relevant to the research question.
+
+\subsubsection{Configurations}
+% Describe whether the models are pre-trained, fine-tuned, or used with prompt engineering.
+% Explain any hyperparameter tuning performed (e.g., learning rate, batch size).
+% Discuss the computational resources required (e.g., GPUs, cloud services).
+%
+% Use references to support our choices here!
+
+% --------------------------------------------
 \subsection{Data Analysis}
 % Step 3:
 % Describe the methods of analysis
@@ -80,6 +95,7 @@ result. Furthermore, explain the variables that were measured. See comments...}
 % Themes and Patterns
 \textcolor{blue}{Explain the methods used to analyze the collected data. See comments...}
 
+% --------------------------------------------
 \subsection{Research Biases}
 % Step 4:
 % Evaluate and justify methodological choices
