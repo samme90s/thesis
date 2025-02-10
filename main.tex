@@ -10,31 +10,26 @@
 \usepackage{hyperref}
 % Crucial for your citation management (\cite commands)
 % and bibliography style
-\usepackage[numbers,sort&compress]{natbib}
+\usepackage[numbers, sort&compress]{natbib}
 
-\title{
-    Text classification using large language models
-    \\ \large
-    Exploring the efficiency and accuracy of labeling work orders
-}
+\title{ Text classification using large language models \\ \large Exploring the efficiency
+and accuracy of labeling work orders }
 \author{Samuel Svensson}
 \date{\today}
 
 \begin{document}
+    \maketitle
+    \newpage
 
-\maketitle
-\newpage
+    \tableofcontents
+    \newpage
 
-\tableofcontents
-\newpage
+    \input{spp.tex}
+    \input{introduction.tex}
+    \input{data.tex}
+    \input{method.tex}
 
-\input{spp.tex}
-\input{introduction.tex}
-\input{data.tex}
-\input{method.tex}
-
-\newpage
-\bibliographystyle{IEEEtran}
-\bibliography{references}
-
+    \newpage
+    \bibliographystyle{IEEEtran}
+    \bibliography{references}
 \end{document}

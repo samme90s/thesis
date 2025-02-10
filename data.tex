@@ -1,30 +1,42 @@
 \section{Data}
 
-The experiment is conducted using anonymized work orders, but may still contain
-sensitive information.
-Therefore, when presenting potentially sensitive information it will be replaced
-as dummy data.
-This will be clarified beforehand.
+The data provided by UPTILT will be used to train and evaluate different models
+for the purpose of this research. Any data presented will be dummy data and not representative
+of the actual data provided by UPTILT. This applies to all features except those
+that are necessary to understand the context, such as the type of work.
 
-The data contains \colorbox{yellow}{UNKNOWN} work orders, without relations
-to each other.
-It is unstructured, meaning that the data does not have predefined categories.
-The data comes in the form of text (English) and numerical values.
-I have opted to only use the titles and descriptions of the work orders,
-as these are the most relevant for the classification task, and will be used to
-verify the correctness of the LLMs.
+\subsection{Experiment setup}
 
-When working with the ML model, I will use a manually structured subset of the
-data.
-Using a subset allows the primary focus to be on the LLMs, as manually labeling
-the entire dataset would not be feasible within the time frame of this thesis.
+The experiment is conducted using anonymized work orders, but may still contain sensitive
+information. Therefore, when presenting potentially sensitive information, it
+will be replaced as dummy data. This will be clarified beforehand.
 
-\colorbox{yellow}{Explain what labels I will use and why when structuring the
-    dataset.}
+\subsection{Dataset characteristics}
 
+The data contains \colorbox{yellow}{UNKNOWN} work orders, without relations to each
+other. It is unstructured, meaning that the data does not have predefined categories.
+The data comes in the form of text (English) and numerical values. We have opted to
+only use the titles and descriptions of the work orders, as these are the most
+relevant for the classification task, and will be used to verify the correctness
+of the LLMs.
+
+\subsection{Data subset}
+
+When working with the ML model, we will use a manually structured subset of the data.
+Using a subset allows the primary focus to be on the LLMs, as manually labeling the
+entire dataset would not be feasible within the time frame of this thesis.
+
+\subsection{Labeling strategy}
+
+\colorbox{yellow}{Explain what labels we will use and why when structuring the
+dataset.}
+
+\subsection{Data pre-processing}
+
+\colorbox{yellow}{Explain how the data is pre-processed.}
 % Explain how the data is pre-processed
 % Example remove stop words, punctuation, etc.
 % Tokenize for NLTK
-
+% Include explaination of where our scripts are located.
 
 % Use python script for this.

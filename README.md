@@ -9,7 +9,7 @@
 
 ### Argumentation structure
 
-1. Summary  
+1. Summary
    (Explain the area of focus)
 2. Positioning  
    (How do I position ourselves in relation to what is described in the summary?
