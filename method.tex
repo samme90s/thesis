@@ -28,11 +28,32 @@
 % Experiments with a single independent variable are easier to analyze.
 %
 % We often need a baseline for an experiment to make sense (provide knowledge).
+The data provided by UPTILT was used to train and evaluate different models for the
+purpose of this research. The experiment was conducted using anonymized work
+orders, but may still contain sensitive information. Therefore, a thorough cleaning
+process was performed to ensure that no sensitive information was present in the
+dataset once the experiment was conducted. The dataset was split into training
+and evaluation (test) sets to ensure that the models were not overfitting the
+data.
+
+The data contained \colorbox{yellow}{UNKNOWN} work orders, without relations to each
+other. It was unstructured, meaning that the data does not have predefined categories,
+and came in the form of text (mainly in Swedish) and numerical values. We opted to
+only use the titles and descriptions of the work orders, as these were the most
+relevant for the classification task, and was be used to verify the correctness of
+the LLMs.
+
+When working with the MLM (machine learning model) we used a manually structured
+subset of the data. Using a subset allowed the primary focus to be LLMs, as manually
+labeling the entire dataset would was not feasible within the time frame.
+% Verify this once the experiment has been conducted!
+% We might have time to manually label it actually...
+
 We conducted a quantitative experimental study to evaluate the performance of two
-models, Deepseek and Deepseek (reasoning), on the UPTILT dataset. Metrics such
-as accuracy, precision, recall, F1 score, and execution time were collected
-using primary data obtained through controlled experiments. This approach was chosen
-to ensure measurable and reproducible results.
+models, Deepseek and Deepseek (reasoning). Metrics such as accuracy, precision, recall,
+F1 score, and execution time were collected using primary data obtained through controlled
+experiments. This approach was chosen to ensure measurable and reproducible
+results.
 % Continuing with SETUP subsubsection... (as a part of the experiment design)
 % As example:
 % - The machine used
@@ -44,15 +65,27 @@ to ensure measurable and reproducible results.
 %
 % Add sources/references here to support our choices!
 
-\subsubsection{Models}
+\subsection{Dataset pre-processing}
+% Explain how the data is pre-processed
+% Example remove stop words, punctuation, etc.
+% Tokenize for NLTK
+% Include explaination of where our scripts are located.
+%
+% Use python script for this.
+% Potential subheading:
+% \subsubsection{Text cleaning}
+% \subsubsection{Word segementation}
+% \subsubsection{Stop words removal}
+
+\subsection{Models \& configurations}
 % Specify the LLMs and ML models/algorithms used (e.g., GPT-4o, Deepseek, Naive Bayes).
 %
 % Explain why these models were chosen and how they are relevant to the research question.
-
-\subsubsection{Configurations}
 % Describe whether the models are pre-trained, fine-tuned, or used with prompt engineering.
 % Explain any hyperparameter tuning performed (e.g., learning rate, batch size).
 % Discuss the computational resources required (e.g., GPUs, cloud services).
+%
+% Explain how we aim to label/classify the work orders here.
 %
 % Use references to support our choices here!
 
