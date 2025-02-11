@@ -1,8 +1,9 @@
+# Fix venv for NLTK
 import json
 import os
 
 
-def clean_data(input_filename: str, output_filename: str) -> None:
+def filter_data(input_filename: str, output_filename: str) -> None:
     """
     Use this script to clean data from a JSON file. The input file should
     contain a list of objects, each with a "title" and "description" key.
@@ -31,6 +32,10 @@ def clean_data(input_filename: str, output_filename: str) -> None:
     print(f"Cleaned data written to: {output_filename}")
 
 
+def remove_stop_words() -> None:
+    pass
+
+
 if __name__ == "__main__":
     # Specify your input and output file names
     input_file = "../../.data/wo_data.json"
@@ -41,7 +46,7 @@ if __name__ == "__main__":
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    clean_data(
+    filter_data(
         input_filename=input_file,
         output_filename=output_file
     )
