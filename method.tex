@@ -33,27 +33,27 @@ purpose of this research. The experiment was conducted using anonymized work
 orders, but may still contain sensitive information. Therefore, a thorough cleaning
 process was performed to ensure that no sensitive information was present in the
 dataset once the experiment was conducted. The dataset was split into training
-and evaluation (test) sets to ensure that the models were not overfitting the
+and evaluation (test) subsets to ensure that the models were not overfitting the
 data.
 
 The data contained \colorbox{yellow}{UNKNOWN} work orders, without relations to each
 other. It was unstructured, meaning that the data does not have predefined categories,
 and came in the form of text (mainly in Swedish) and numerical values. We opted to
 only use the titles and descriptions of the work orders, as these were the most
-relevant for the classification task, and was be used to verify the correctness of
-the LLMs.
+relevant for the classification task.
 
 When working with the MLM (machine learning model) we used a manually structured
-subset of the data. Using a subset allowed the primary focus to be LLMs, as manually
-labeling the entire dataset would was not feasible within the time frame.
+subset of the data. Using a subset allowed the primary focus to be LLMs, as
+manually labeling the entire dataset would was not feasible within the time
+frame.
 % Verify this once the experiment has been conducted!
 % We might have time to manually label it actually...
 
-We conducted a quantitative experimental study to evaluate the performance of two
-models, Deepseek and Deepseek (reasoning). Metrics such as accuracy, precision, recall,
-F1 score, and execution time were collected using primary data obtained through controlled
-experiments. This approach was chosen to ensure measurable and reproducible
-results.
+We conducted a quantitative experimental study to evaluate the performance of
+two models, Deepseek and Deepseek (reasoning). Metrics such as accuracy, precision,
+recall, F1 score, and execution time were collected using primary data obtained
+through controlled experiments. This approach was chosen to ensure measurable and
+reproducible results.
 % Continuing with SETUP subsubsection... (as a part of the experiment design)
 % As example:
 % - The machine used
