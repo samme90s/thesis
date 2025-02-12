@@ -1,6 +1,8 @@
+# Folders
 .data/
 .vscode/
 
+# Files
 *.aux
 *.bbl
 *.blg
