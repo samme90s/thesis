@@ -1,13 +1,20 @@
 # Pypp
 
-Python data pre-processor   
+Python data pre-processor
 
 ## Development
 
-### Pre-requisites
+### Python
 
-- Python
-- Python Virtual Environment
+```shell
+# If necessary, upgrade your version of pip.
+# If python3 does not work here try: py or python,
+# and same goes for any of the other scripts going
+# forward.
+python3 -m pip install --upgrade pip
+# Install virtualenv package
+python3 -m pip install virtualenv
+```
 
 ### Virtual environment
 
@@ -20,7 +27,7 @@ deactivate
 #### Unix/MacOS
 
 ```shell
-# If python3 does not work here try: py or python.
+# Create the virtual environment
 python3 -m venv .venv &&
 # Activate the environment
 source .venv/bin/activate
@@ -29,7 +36,7 @@ source .venv/bin/activate
 #### Windows
 
 ```shell
-# If python does not work here try: py or python3.
+# Create the virtual environment
 python -m venv .venv &&
 # Activate the environment
 .venv\Scripts\activate.bat
