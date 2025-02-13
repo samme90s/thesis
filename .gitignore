@@ -1,6 +1,7 @@
 # Folders
-.data/
-.vscode/
+**.data/
+**data/
+**.vscode/
 
 # Files
 *.aux
