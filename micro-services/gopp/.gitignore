@@ -3,5 +3,6 @@
 **/.data
 
 # Files
+gopp
 *.out
 *.bin
