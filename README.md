@@ -21,7 +21,6 @@
 
 ### Tools
 
-- Ragas metrics
 - Evaluation of LLMs
 
 ### Alternatives
@@ -48,6 +47,3 @@ Example 2:
 2. Let the LLM categorize work orders.
 3. Assess whether these categories seem reasonable.
 
-## Search prompts
-
-- Using LLM to categorize text
