@@ -11,6 +11,8 @@
 % Why you chose these methods
 %
 % Your methodology section should generally be written in the PAST TENSE!
+In our work on text classification, it was important to directly measure how changes in our methods influenced performance. That is why we chose a controlled experiment --- as it let us tweak one or more factors (for example, feature extraction or model parameters) while keeping all other conditions the same. This controlled setting made it easier to observe and measure the impact on key performance indicators, like classification accuracy or F1-score, using statistical tests. Because we obtained numerical measurements from our experiments, our approach is inherently quantitative.
+Wohlin et al. \cite{wohlin2000} explain that controlled experiments provide a clear way to investigate cause-and-effect relationships. Compared to surveys or case studies --- which may mix in effects from uncontrolled factors --- a controlled experiment minimizes external influences. This allows us to be more confident that any changes in the performance of our text classification system are due to the specific modifications we introduced rather than random variation.
 
 % --------------------------------------------
 \subsection{Experiment design}
@@ -28,32 +30,14 @@
 % Experiments with a single independent variable are easier to analyze.
 %
 % We often need a baseline for an experiment to make sense (provide knowledge).
-The data provided by UPTILT was used to train and evaluate different models for the
-purpose of this research. The experiment was conducted using anonymized work
-orders, but may still contain sensitive information. Therefore, a thorough cleaning
-process was performed to ensure that no sensitive information was present in the
-dataset once the experiment was conducted. The dataset was split into training
-and evaluation (test) subsets to ensure that the models were not overfitting the
-data.
 
-The data contained \colorbox{yellow}{UNKNOWN} work orders, without relations to each
-other. It was unstructured, meaning that the data does not have predefined categories,
-and came in the form of text (mainly in Swedish) and numerical values. We opted to
-only use the titles and descriptions of the work orders, as these were the most
-relevant for the classification task.
 
-When working with the MLM (machine learning model) we used a manually structured
-subset of the data. Using a subset allowed the primary focus to be LLMs, as
-manually labeling the entire dataset would was not feasible within the time
-frame.
-% Verify this once the experiment has been conducted!
-% We might have time to manually label it actually...
+% Update this and explain that the data was split and how we used ground truth in comparison to the other split parts etc... also remove that the part that states there may be sensitive data...
+The data was used to train and evaluate different models for the purpose of this research. The experiment was conducted using anonymized WOs, but may still contain sensitive information. Therefore, a thorough cleaning process was performed to ensure that no sensitive information was present in the dataset once the experiment was conducted. The dataset was split into training and evaluation (test) subsets to ensure that the models were not overfitting the data using the decimals of pi as seeds.
 
-We conducted a quantitative experimental study to evaluate the performance of
-two models, Deepseek and Deepseek (reasoning). Metrics such as accuracy, precision,
-recall, F1 score, and execution time were collected using primary data obtained
-through controlled experiments. This approach was chosen to ensure measurable and
-reproducible results.
+The prompt was constructed using a domain expert within the service business underlying important parts and making sure the prompt contains uses the correct language and words. Furthermore, this guaranteed that the iterations throughout the methodology adhered to the specific domain requirements --- making sure that the results stayed consistent.
+
+
 % Continuing with SETUP subsubsection... (as a part of the experiment design)
 % As example:
 % - The machine used
@@ -103,9 +87,12 @@ reproducible results.
 %
 % Can be seen as inputs.
 \begin{center}
-    \begin{tabular}{| l | l |}
-        Dataset & The UPTILT dataset used for training and evaluation.     \\
-        Models  & The different models used (both LLMs and ML algorithms). \\
+    \begin{tabular}{| l  |l |}
+        Dataset & The UPTILT dataset sent to pre-processor and models\\
+ Pre-processing&\\
+        Models & The different models used (both LLMs and ML algorithms). \\
+ Model configuration&\\
+ Question &The prompt\\
     \end{tabular}
 \end{center}
 

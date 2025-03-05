@@ -1,72 +1,31 @@
 \section{Introduction}
 
-This paper introduces the different aspects of the research and to provide the main
-scope. It will describe large language models (LLMs) and their applications in
-text classification. We will collaborate with UPTILT that delivers an application
-to customers within the service business, solving the delivery of invoices and
-offers to the customer by tracking materials, hourly work and more. They have
-provided us with the necessary data which has been redacted to ensure anonymity
-and privacy. We will foremost discuss the importance of classifying work orders (WOs),
-but also provide a general conclusion on the topic and contribute to the field
-of text classification and natural language processing (NLP) using LLMs.
+This paper introduces several aspects of our research and presents its main scope. We describe how large language models (LLMs) and their advanced reasoning capabilities can be applied in text classification. In collaboration with UPTILT, a company that delivers applications to customers within the service business, we analyze real-world work order (WO) data that has been redacted to ensure anonymity and privacy.
+
+By leveraging modern LLMs, which have evolved from traditional machine learning (ML) methods, we aim to discover the accuracy in classifying unstructured text between the two methods, but also to look at the efficiency in comparison. Our approach is fundamentally quantitative --- obtaining numerical measurements such as classification accuracy and F1-score through rigorous statistical tests. As Wohlin et al. \cite{wohlin2000} argue, controlled experiments provide a clear framework for investigating cause-and-effect relationships by limiting external influences. This gives us confidence that any improvements in our text classification solution arise from the specific modifications we have introduced, rather than from uncontrolled factors.
+
+... to be continued when most of the work is complete in the rest of the document...
 
 \subsection{Background}
 
-In many industries today, working with and handling large quantities of
-structured and unstructured data is extremely important. One example is text classification
-which labels text based on their content. Traditionally, machine learning (ML) methods
-have been used for this purpose, but recently, LLMs have shown potential posing generative
-capabilities, along with understanding and reasoning within language(s) \cite{huang2024}.
+In many industries today, handling large quantities data is common. Text classification is one key application area where models are trained to classify data, or more specific, text documents into pre-defined classes. Traditionally, ML approaches have been used to build these classifiers. Early techniques depended on rule-based systems and simple algorithms like logistic regression or Naive Bayes, which relied on manually crafted features derived from structured data \cite{bing2011}. 
 
-Training an ML model means analyzing the content of the text and identifying features
-that are relevant, so computer systems can, for example, use this technique for
-identifying spam and filtering documents \cite{dalal2011}. Comparing this approach
-to an already widely trained LLM model, which does not require the same amount
-of manual labor and configuration.
+Data is generally divided into two main categories: structured and unstructured. \textbf{Structured data} is organized in a clear, predefined format. For example, consider an employee roster stored in a spreadsheet where each row represents an employee and columns indicate details such as name, employee ID, department, and phone number. Similarly, a financial report that lists company names, dates, and expense figures in a table is also structured data. Its orderly layout makes it easy for business users to read and analyze. \textbf{Unstructured data} lacks this uniform organization. Examples include emails, text documents, or social media posts, where information is presented in varying formats without a strict arrangement. Work orders are a typical example of unstructured data. A work order might include a lengthy description of maintenance tasks, lists of required materials, details on location and customer info, and other text that does not fit into neatly labeled columns \cite{ibm2023}. Because each document can be formatted differently, unstructured data does not lend itself to simple, tabular representation \cite{ibm2025datadiff}.
 
-LLMs are a subgroup of AI that work on the knowledge of next word context and
-are often utilized in the context of allowing the user to prompt it with
-instructions or questions. They utilize a much larger pre-trained knowledge compared
-to machine learning, which often specializes in a specific domain and type of
-data. Furthermore, they can analyze data and recognize patterns with minimal
-human interaction, and makes them highly effective in applications like NLP \cite{andersson2024}.
+However, the early techniques often fall short in capturing language nuances, context details, and the ambiguity in unstructured text. More recently, advances in natural language processing (NLP) have led to the development of large language models (LLMs) based on transformer architectures such as GPT and BERT. These models use self-attention to focus on important parts of the text and capture deep meaning by understanding relationships between words. There are even newer versions that add reasoning capabilities, which aim to improve decision-making in text classification. Learning from vast amounts of pre-trained data and use self-attention to track relationships between words, which significantly improves their ability to understand and predict next word context. For example, while traditional ML models focus on manually extracting features, modern LLMs such as the previously mentioned GPT and BERT can adapt to various types of text with minimal human intervention such as pre processing and structuring. Supporting this development, recent research has shown that LLMs --- especially when fine-tuned for particular domains --- exhibit not only advanced language understanding but also reasoning capabilities that can further improve text classification performance \cite{huang2024} \cite{andersson2024} \cite{merritt2022} \cite{nazyrova2024} \cite{wang2024}. Switching focus to another ML technique such as recurrent neural networks or Long Short-Term Memory (LSTMs) shows capability in handling sequences of words and remembering long distances between related words. This makes it easier for the model to understand context without needing manual feature design. This technique was introduced in the late 90's and is far less complex and resource consuming than the latter transformer technique and is still considered a state-of-the-art algorithm \cite{wang2024} \cite{hochreiter1997}.
 
-WOs is a document that outlines the details of a maintenance task. This data
-comes in the form of text and can through proper utilization be the key
-component when categorizing using LLMs. WOs most commonly contains information regarding
-the material required to complete such task, but also the geographic location, customer
-etc. Today, many companies still rely on manual processing, which often leads to
-mistakes \cite{ibm2023} \cite{li2024}. Throughout our work, we will focus on
-providing a better solution than the current manual processing by using LLMs to
-classify work orders.
+Although as Nazyrova et al. \cite{nazyrova2024} study focuses on the medical application area within text classification, the principles are directly applicable to our context.  Traditionally, companies rely on manual processing of WOs, a practice that is both labor-intensive and error prone \cite{li2024}. In our study, we target a more complex problem: unlike a binary classification that simply decides "yes" or "no," our goal is to automatically classify these WOs into multiple distinct categories. This challenge calls for a solution that can handle rich, unstructured text information and assign precise labels based on the document’s content. By comparing reasoning or non-reasoning LLM with state-of-the-art ML algorithms we aim to provide a clearer picture if it is efficient with the former tool (RQ1, RQ2).
 
-\subsubsection{Related Work}
+\subsection{Related work}
 
-Huang and He \cite{huang2024} highlight the significant cost of manual labor in tagging and
-categorizing text, emphasizing how fine-tuning and choice of parameters can influence the final
-behavior of the trained ML model. They explain how the latest LLMs have showcased "remarkable
-reasoning performance across a wide range of NLP tasks". We aim to follow this trail and
-further analyze the efficiency and performance of categorizing text within the context of WOs.
+... Check other works here and position ourselves to their conclusions and discussions so we know what to build upon to provide a knowledge contribution...
+
+\subsection{Research questions}
+
+Based on our focus on text classification and its evolution, this thesis aims to answer the following research questions:
 
 \bigskip
-Current research has demonstrated that transformer-based models (a neural
-network architecture, meaning it learns by tracking relationships between words \cite{merritt2022}),
-such as BERT and other domain-specific variants, significantly improve text
-classification processes through transfer learning and fine-tuning
-\cite{nazyrova2024}. While Nazyrova et al. focuses on medical text
-classification and our focus lies within WO classification, their findings on the
-topic of fine-tuning LLMs is relevant for our paper and its research.
-
-\subsection{Research Questions}
-
-This thesis aims to answer the following research question:
+\textit{RQ1: Is it efficient based on the accuracy when using a large language model for text classification of unstructured text data compared to a state-of-the-art machine learning model?}
 
 \bigskip
-\textit{RQ1: Can a higher accuracy when using large language models for text classification
-of work orders be achieved on an unstructured dataset compared to a traditional machine
-learning model with structured data?}
-
-\bigskip
-\textit{RQ2: Can a higher accuracy when using reasoning large language models for
-text classification of work orders be achieved on an unstructured dataset compared
-to a non-reasoning large language model?}
+\textit{RQ2: Can a higher accuracy be achieved when using reasoning large language models for text classification of unstructured data compared to a non-reasoning large language model or a state-of-the-art machine learning model?}
