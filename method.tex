@@ -46,30 +46,42 @@ In contrast, large language models (LLMs) based on the Transformer architecture,
 Given these findings, we chose LSTMs for their proven effectiveness in sequence modeling and GPT-based models for their adaptability and few-shot classification capabilities. By choosing both LSTMs and LLMs, we can compare how well LSTMs handle structured word sequences versus how LLMs can adapt to different text classification tasks without needing extensive training and answer both of our research questions \textit{(RQ1, RQ2)}.
 
 \subsection{Variables}
+A variable is anything that can change or be changed—any factor that can be manipulated, controlled for, or measured in an experiment. In this study, we distinguish between two main types of variables: independent variables, which we manipulate to observe their effect, and dependent variables, which we measure to capture the outcomes.
 
-% A variable is anything that can change or be changed => any factor that can be
-% manipulated, controlled for, or measured in an experiment.
-%
-% Independent variables:
-% These are factors that you can manipulate in an experiment.
-% Our hypothesis is that respective independent variable causes a direct effect on the dependent variable(s).
-\subsubsection{Independent}
+Our independent variables include the choice of train and test subsets, the models and algorithms used, the specific model configurations, and the prompt. We hypothesize that each of these factors can directly influence the results. To assess their effects, we rely on our dependent variables, namely accuracy, precision, recall, and the F1-score. By measuring these metrics under various settings, we can compare and quantify how each independent variable impacts overall performance.
 
-\begin{itemize}
-    \item Train \& Test subsets
-    \item Models \& Algorithms
-    \item Model configurations
-    \item Prompt
-\end{itemize}
+The four dependent variables is a combination of results from classifications.  A true positive (TP) means the predicted label matches the true label in contrast  to the true negative (TN), which means the predicted label is “negative” and the  actual label is also "negative." Both TPs and TNs represent accurate predictions,  whereas a false positive (FP) or false negative (FN) indicates that the  classification was incorrect.
 
-% Dependent variables:
-% These are factors that you can observe or measure. As we change the independent variable(s),
-% we observe what happens to the dependent variable(s).
-\subsubsection{Dependent}
+\medskip
+Accuracy is the percentage of correct predictions over the total number of  predictions. More concretely, it measures how often the model labels samples  correctly compared to the total number of samples evaluated, and can be written  as: where $\mathrm{TP}$ is the number of true positives, $\mathrm{TN}$ is the  number of true negatives, $\mathrm{FP}$ is the number of false positives,  and $\mathrm{FN}$ is the number of false negatives.
 
-\begin{itemize}
-    \item ... fill out what we expect here from RAGAS and SciKit Learn...
-\end{itemize}
+$$
+\mathrm{Accuracy} = \frac{\mathrm{TP} + \mathrm{TN}}
+{\mathrm{TP} + \mathrm{TN} + \mathrm{FP} + \mathrm{FN}}
+$$
+
+\medskip
+Precision displays the model’s accuracy in predicting a particular label (also known as class).  In other words, it measures how often the model is correct when it predicts that label.  Was calculated as follows: where $\mathrm{TP}$ is the number of true positives and $\mathrm{FP}$ is the  number of false positives.
+
+$$
+\mathrm{Precision} 
+= \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FP}}
+$$
+
+\medskip
+Recall can be seen as the ratio of positively recognized samples to all samples  in the actual label -- $\mathrm{TP}$ and $\mathrm{FN}$, where $\mathrm{TP}$ denotes the number of true positives, and $\mathrm{FN}$ represents the number of false negatives.
+
+$$
+\mathrm{Recall} = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}}
+$$
+
+\medskip
+F1 Score is the harmonic mean between Precision and Recall. More concretely, it is a single metric  that balances the trade-off between both metrics, especially useful when we need a combined measure.  Was calculated as follows: where $\mathrm{Precision}$ is the fraction of predicted positives that are  truly positive, and $\mathrm{Recall}$ is the fraction of actual positives that are predicted positive.
+
+$$
+\mathrm{F1} = \frac{2 \times \mathrm{Precision} \times \mathrm{Recall}}
+{\mathrm{Precision} + \mathrm{Recall}}
+$$
 
 % --------------------------------------------
 \subsection{Data collection}
