@@ -11,8 +11,15 @@
 % Why you chose these methods
 %
 % Your methodology section should generally be written in the PAST TENSE!
+\begin{comment}
 In our work on text classification, it was important to directly measure how changes in our methodological factors factors (independent variables) influenced performance metrics (dependent variables). Our primary focus was to assess the relative effectiveness of different model classes --- long short-term memory machine learning algorithms, non-reasoning large language models (LLM), and reasoning-enabled LLMs --- in classifying unstructured text data. That is why we chose a controlled experiment --- as it let us tweak one or more factors (for example, feature extraction or model parameters) while keeping all other conditions the same. This controlled setting made it easier to observe and measure the impact on key performance indicators, like classification accuracy or F1-score, using statistical tests. Because we obtained numerical measurements from our experiments, our approach is inherently quantitative.
 Wohlin et al. \cite{wohlin2000software} explain that controlled experiments provide a clear way to investigate cause-and-effect relationships. Compared to surveys or case studies --- which may mix in effects from uncontrolled factors --- a controlled experiment minimizes external influences. This allows us to be more confident that any changes in the performance of our text classification system are due to the specific modifications we introduced rather than random variation.
+\end{comment}
+
+Based on our focus on text classification , this thesis aims to address several core questions (RQ1 to RQ4). Our first three research questions concern accuracy (RQ1), cost and time efficiency (RQ2), and applicability to hierarchical categorization (RQ3) for LSTM networks, LLMs without explicit reasoning, and LLMs with reasoning capabilities. To tackle these questions, we chose a controlled experiment : by systematically varying specific factors—like feature extraction methods or model hyperparameters—while keeping all other conditions the same, we can better isolate and measure the effects on performance metrics such as accuracy and F1-score (\cite{wohlin2000software}). This experimental setup provides the quantitative structure necessary to compare the different models in a fair and transparent way, reducing the chances that outside influences distort our results.
+
+Although RQ4 involves a case study with actual work orders, the basic methodology remains grounded in comparing the most promising models from the earlier steps. Thus, after completing our controlled experiments to identify which models excel in RQ1 through RQ3, we have proceeded with a practical application in RQ4. This final step allowed us to test  relevance in an applied case by deploying the top-performing classifier in a multi-level categorization scenario resembling a professional setting relevant to UPTILT.
+
 
 \subsection{Experiment design}
 % Continuing with design and setup subsection...
