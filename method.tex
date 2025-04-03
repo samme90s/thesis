@@ -21,23 +21,37 @@ Based on our focus on text classification , this thesis aims to address several 
 Although RQ4 involves a case study with actual work orders, the basic methodology remains grounded in comparing the most promising models from the earlier steps. Thus, after completing our controlled experiments to identify which models excel in RQ1 through RQ3, we have proceeded with a practical application in RQ4. This final step allowed us to test  relevance in an applied case by deploying the top-performing classifier in a multi-level categorization scenario resembling a professional setting relevant to UPTILT.
 
 
-\subsection{Experiment design}
-% Continuing with design and setup subsection...
-% As example:
-% - The machine used
-% - The software used (versions!)
-% - What types of measurement tools where used (again versions, unless it is already a part of the software)
-% Add sources/references here to support our choices!
+\subsection{Data collection}
+% Step 2:
+% Methods of data collection:
+%
+% - The sampling method or critera
+% - The tools, procedures, and materials
+% - How variables were measured
+
 \begin{comment}
 With our collaboration we got access to an extensive dataset consisting of anonymized Work Orders (WOs) derived from genuine service business operations. Each WO represented unstructured textual information described earlier in the Background section, including task descriptions, instructions, lists of materials, and other relevant details without structured formatting.
 
 Before starting the iterations of the experiment, we further cleaned the dataset and removed any sensitive information. A method such as tokenization and word segmentation was applied using natural language toolkit (NLTK) --- a standard toolkit found in Python and recommended by \cite{bird2009nlp}. This process involved breaking the text into tokens (words, punctuation marks, etc.) and accurately identifying word boundaries and was our first step in the process. Stop-word removal was applied using the same library, eliminating common words \textit{("the", "is", "at" and more...)} that does not contribute any significant meaning to the text when used in conjunction with ML and LLMs. The text was further cleaned from any punctuations and symbols.    
 \end{comment}
 
-\textbf{Data Acquisition and Preparation}
+In collaboration with UPTILT, we obtained access to a dataset comprising anonymized Work Orders (WOs). These WOs originated from real-world service business operations and contained unstructured textual data, including elements such as task descriptions, operational instructions, and material lists, all lacking a predefined structure.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/fig4.png}
+    \caption{Work order example}
+    \label{fig:enter-label}
+\end{figure}
 
-In collaboration with UPTILT, we obtained access to a dataset comprising anonymized Work Orders (WOs). These WOs originated from real-world service business operations and contained unstructured textual data as described previously (see Background section), including elements such as task descriptions, operational instructions, and material lists, all lacking a predefined structure.
+Initially, we wanted to use this WO data to train machine learning models, specifically an SVM (Support Vector Machine), to automatically classify them. However, we quickly realized this wouldn't work well. We couldn't get reliable 'ground truth' labels for the WOs, which are needed for training. This was because the data was already anonymized, historical, and we didn't have the resources to manually label thousands of them. On top of that, there simply wasn't enough WO data available to train an SVM model properly.
 
+Because of these issues, we decided to change our approach. We kept the WO dataset, but instead of using it for the main machine learning experiments, we decided to use it for a detailed case study later in the project (this relates to our Research Question 4). This way, we could still learn from its real-world content.
+
+For our main text classification experiments, we needed another dataset that did have labels and enough data. We chose the well-known "20 Newsgroups" dataset \cite{Lang95}. We picked this one because the text in the newsgroup posts has some similarities to the WO text – for example, it uses varied language and includes specific terms or abbreviations, making it complex in a similar way. Even though the topics are completely different, using this dataset allowed us to test our classification methods on text with similar kinds of challenges.
+
+The 20 Newsgroups dataset, collected by Lang \cite{Lang95}, is commonly used in research for testing text classification. It contains about 20,000 documents from 20 different online news discussion groups. The documents are divided fairly evenly among the 20 groups, each covering a different topic. Some topics are closely related (like different computer groups), while others are very unrelated (like sales versus religion), which makes classifying the documents a good test for machine learning models.
+
+\subsection{Data preparation}
 To prepare this raw data for controlled experimentation and subsequent analysis, particularly for use with Machine Learning (ML) and Large Language Models (LLMs), a dedicated data preprocessing pipeline was implemented using Python. This pipeline served to structure, clean, and normalize the textual content. The implementation primarily utilized the Pandas library for data manipulation and the Natural Language Toolkit (NLTK) \cite{bird2009nlp} for core text processing functionalities.
 
 As a prerequisite, the pipeline ensured necessary NLTK resources were available by automatically downloading the 'stopwords' corpus and the 'punkt' tokenizer models via the \verb|nltk.downloader| module.
@@ -45,17 +59,30 @@ As a prerequisite, the pipeline ensured necessary NLTK resources were available 
 The core data processing workflow involved the following key stages:
 
 \begin{enumerate}
-    \item \textbf{Loading and Structuring:} WO data was loaded from various JSON formats (files, strings, or objects) and structured into a tabular Pandas DataFrame.
+    \item \textbf{Loading and Structuring:} WO data were loaded from various JSON formats (files, strings, or objects) and structured into a tabular Pandas DataFrame.
     \item \textbf{Selective Text Extraction:} Relevant textual content was selectively extracted from predefined fields (keys) within each record, focusing only on scalar values suitable for conversion to text.
-    \item \textbf{Text Normalization:} Each extracted text segment underwent a standardized cleaning sequence: conversion to lowercase, removal of punctuation and symbols (retaining alphanumeric content), and filtering of common English stop words identified via NLTK.
-    \item \textbf{Consolidation and Filtering:} The cleaned text segments from the relevant fields of each WO were concatenated into a single string. Records yielding an empty string after this process were subsequently removed.
+    \item \textbf{Text Normalization:} Each extracted text segment was subjected to a standardized cleaning sequence: conversion to lowercase, removal of punctuation and symbols (retaining alphanumeric content), and filtering of common English stop words identified via NLTK.
+    \item \textbf{Consolidation and Filtering:} The cleaned text segments from the relevant fields of each news article were concatenated into a single string. Records yielding an empty string after this process were subsequently removed.
 \end{enumerate}
 
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/fig2.png}
+    \caption{Example of an unprocessed news article}
+    \label{fig:enter-label}
+\end{figure}
+
 To facilitate a fair and reproducible comparison across multiple configurations, the dataset was then randomly divided using a fixed-seed splitting method rooted in digits of pi into two distinct subsets: training (~80\%) and testing (~20\%). The training set was used to train (or in the case of LLMs, prompt-engineer and fine-tune prompts for) classification models, while the testing dataset was reserved strictly for their performance evaluation.
 
-Since we did not have access to a domain expert from the specific service business area, prompt construction was based on available domain documentation and published industry terminology in similar fields. To ensure correctness and appropriateness, we systematically referred to standard terminology used in similar industry reports and publicly available domain-specific resources throughout the prompt development stage. Although involving a domain expert is highly recommended, our documentation of each iteration still provides reproducibility. However, the absence of expert validation remains a limitation of our approach.
 
+\subsection{Experiment design}
+% Continuing with design and setup subsection...
+% As example:
+% - The machine used
+% - The software used (versions!)
+% - What types of measurement tools where used (again versions, unless it is already a part of the software)
+% Add sources/references here to support our choices!
 % Specify the LLMs and ML models/algorithms used (e.g., GPT-4o, Deepseek, Naive Bayes).
 %
 % Explain why these models were chosen and how they are relevant to the research question.
@@ -64,6 +91,9 @@ Since we did not have access to a domain expert from the specific service busine
 % Discuss the computational resources required (e.g., GPUs, cloud services).
 %
 % Use references to support our choices here!
+
+
+
 For text classification, we selected long short-term memory (LSTM) algorithms and the later generative pretrained transformer (GPT) models based on their demonstrated effectiveness in prior research. Traditional machine learning (ML) models such as logistic regression, random forests, and naive bayes have been widely applied in text classification but typically require features and extensive labeled data to perform well. While these models have been useful, they struggle with capturing sequential dependencies and handling domain shifts effectively \cite{sarker2021machine}.
 
 Deep learning approaches (recurrent neural networks (RNNs) and long short term memory algorithms) have shown state-of-the-art performance by capturing long-range dependencies in text \cite{sutskever2014sequence}. LSTMs, in particular, are known for their ability to mitigate vanishing gradient issues that affect standard RNNs, making them well-suited for text classification tasks \cite{hochreiter1997long}. Despite their advantages, LSTMs still require substantial labeled datasets to generalize across different domains effectively. Recent work has demonstrated that fine-tuning or introducing few-shot learning can significantly improve their adaptability \cite{jamshidi2024effective}.
@@ -111,13 +141,6 @@ $$
 $$
 
 % --------------------------------------------
-\subsection{Data collection}
-% Step 2:
-% Methods of data collection:
-%
-% - The sampling method or critera
-% - The tools, procedures, and materials
-% - How variables were measured
 
 \subsection{Data analysis}
 % Step 3:
@@ -136,3 +159,5 @@ $$
 % Why you chose these particular methods?
 % Why other methods were not suitable for your objectives?
 % How this approach contributes new knowledge or understanding?
+
+Since we did not have access to a domain expert from the specific service business area, prompt construction was based on available domain documentation and published industry terminology in similar fields. To ensure correctness and appropriateness, we systematically referred to standard terminology used in similar industry reports and publicly available domain-specific resources throughout the prompt development stage. Although involving a domain expert is highly recommended, our documentation of each iteration still provides reproducibility. However, the absence of expert validation remains a limitation of our approach.
