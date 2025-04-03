@@ -1,6 +1,6 @@
 \section{Introduction}
 
-This paper introduces several aspects of our research and presents its main scope. We describe how large language models (LLMs) and their advanced reasoning capabilities can be applied in text classification. In collaboration with UPTILT, a company that delivers applications to customers within the service business, we analyze real-world work order (WO) data that has been redacted to ensure anonymity and privacy.
+This report introduces several aspects of our research and presents its main scope. We describe how large language models (LLMs) and their advanced reasoning capabilities can be applied in text classification. In collaboration with UPTILT, a company that delivers applications to customers within the service business, we analyze real-world work order (WO) data that has been redacted to ensure anonymity and privacy.
 
 By leveraging modern LLMs, which have evolved from traditional machine learning (ML) methods, we aim to discover the accuracy in classifying unstructured text between the two methods (RQ1), but also to look at the efficiency in comparison (RQ2). Our approach is fundamentally quantitative -- obtaining numerical measurements such as classification accuracy and F1-score through rigorous statistical tests. As Wohlin et al. \cite{wohlin2000software} argue, controlled experiments provide a clear framework for investigating cause-and-effect relationships by limiting external influences. This gives us confidence that any improvements in our text classification solution arise from the specific modifications we have introduced, rather than from uncontrolled factors.
 
@@ -28,7 +28,11 @@ Although as Nazyrova et al. \cite{nazyrova2024medical} focuses on the medical ap
 
 % https://www.sciencedirect.com/science/article/pii/S0925231225002929#sec1 (movie production review notes classification)
 
+% https://books.google.com/books?hl=en&lr=&id=o60FEQAAQBAJ&oi=fnd&pg=PA297&dq=classifying+multi+category+text+using+svm+and+large+language+models+-+-+-&ots=mVE3BBTuOo&sig=5KWwKNKdaEi_H77YOdCjiX6ASzc (BERT augmented prompt engineering used in conunction with LLMs)
+
 Sahu \cite{sahu2025language} mentions in the conclusion of his master's thesis that there is a clear advantage in using large language models, particularly BERT-based ones, over common machine learning methods such as support vector machines. Scores, such as F1, recall, precision, and accuracy, were always better for LLMs in this regard, and he mentions how these results were validated by a one-vs-all significance test. Capturing semantic relationships within the text is where the LLMs shine compared to traditional machine learning methods, which rely on term frequency-inverse document frequency (TF-IDF) or bag-of-words, resulting in a lack of deeper understanding with nuanced language. In his case, this nuanced language was within the medical terminology scope. Since this is similar to our work, where news articles and work orders often have nuanced language based on who writes them and sometimes contain slang or abbreviations, we aim to provide better answers in this area. We want to see if traditional machine learning methods, such as support vector machines, can perform on par with large language models, but also investigate if a reasoning LLM could improve upon this with efficiency and cost in mind.
+
+
 
 \subsection{Research questions}
 

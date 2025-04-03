@@ -1,4 +1,4 @@
-\section{Method}
+\section{Methods}
 % https://www.scribbr.com/dissertation/methodology/
 % https://www.youtube.com/watch?v=2MqLFH7CalQ
 %
@@ -12,8 +12,8 @@
 %
 % Your methodology section should generally be written in the PAST TENSE!
 \begin{comment}
-In our work on text classification, it was important to directly measure how changes in our methodological factors factors (independent variables) influenced performance metrics (dependent variables). Our primary focus was to assess the relative effectiveness of different model classes --- long short-term memory machine learning algorithms, non-reasoning large language models (LLM), and reasoning-enabled LLMs --- in classifying unstructured text data. That is why we chose a controlled experiment --- as it let us tweak one or more factors (for example, feature extraction or model parameters) while keeping all other conditions the same. This controlled setting made it easier to observe and measure the impact on key performance indicators, like classification accuracy or F1-score, using statistical tests. Because we obtained numerical measurements from our experiments, our approach is inherently quantitative.
-Wohlin et al. \cite{wohlin2000software} explain that controlled experiments provide a clear way to investigate cause-and-effect relationships. Compared to surveys or case studies --- which may mix in effects from uncontrolled factors --- a controlled experiment minimizes external influences. This allows us to be more confident that any changes in the performance of our text classification system are due to the specific modifications we introduced rather than random variation.
+In our work on text classification, it was important to directly measure how changes in our methodological factors factors (independent variables) influenced performance metrics (dependent variables). Our primary focus was to assess the relative effectiveness of different model classes -- long short-term memory machine learning algorithms, non-reasoning large language models (LLM), and reasoning-enabled LLMs -- in classifying unstructured text data. That is why we chose a controlled experiment -- as it let us tweak one or more factors (for example, feature extraction or model parameters) while keeping all other conditions the same. This controlled setting made it easier to observe and measure the impact on key performance indicators, like classification accuracy or F1-score, using statistical tests. Because we obtained numerical measurements from our experiments, our approach is inherently quantitative.
+Wohlin et al. \cite{wohlin2000software} explain that controlled experiments provide a clear way to investigate cause-and-effect relationships. Compared to surveys or case studies -- which may mix in effects from uncontrolled factors -- a controlled experiment minimizes external influences. This allows us to be more confident that any changes in the performance of our text classification system are due to the specific modifications we introduced rather than random variation.
 \end{comment}
 
 Based on our focus on text classification , this thesis aims to address several core questions (RQ1 to RQ4). Our first three research questions concern accuracy (RQ1), cost and time efficiency (RQ2), and applicability to hierarchical categorization (RQ3) for LSTM networks, LLMs without explicit reasoning, and LLMs with reasoning capabilities. To tackle these questions, we chose a controlled experiment : by systematically varying specific factors—like feature extraction methods or model hyperparameters—while keeping all other conditions the same, we can better isolate and measure the effects on performance metrics such as accuracy and F1-score (\cite{wohlin2000software}). This experimental setup provides the quantitative structure necessary to compare the different models in a fair and transparent way, reducing the chances that outside influences distort our results.
@@ -28,9 +28,29 @@ Although RQ4 involves a case study with actual work orders, the basic methodolog
 % - The software used (versions!)
 % - What types of measurement tools where used (again versions, unless it is already a part of the software)
 % Add sources/references here to support our choices!
-With our collaboration we got access an extensive dataset consisting of anonymized Work Orders (WOs) derived from genuine service business operations. Each WO represented unstructured textual information described earlier in the Background section, including task descriptions, instructions, lists of materials, and other relevant details without structured formatting.
+\begin{comment}
+With our collaboration we got access to an extensive dataset consisting of anonymized Work Orders (WOs) derived from genuine service business operations. Each WO represented unstructured textual information described earlier in the Background section, including task descriptions, instructions, lists of materials, and other relevant details without structured formatting.
 
-Before starting the iterations of the experiment, we further cleaned the dataset and removed any sensitive information. A method such as tokenization and word segmentation was applied using natural language toolkit (NLTK) --- a standard toolkit found in Python and recommended by \cite{bird2009nlp}. This process involved breaking the text into tokens (words, punctuation marks, etc.) and accurately identifying word boundaries and was our first step in the process. Stop-word removal was applied using the same library, eliminating common words \textit{("the", "is", "at" and more...)} that does not contribute any significant meaning to the text when used in conjunction with ML and LLMs. The text was further cleaned from any punctuations and symbols.
+Before starting the iterations of the experiment, we further cleaned the dataset and removed any sensitive information. A method such as tokenization and word segmentation was applied using natural language toolkit (NLTK) --- a standard toolkit found in Python and recommended by \cite{bird2009nlp}. This process involved breaking the text into tokens (words, punctuation marks, etc.) and accurately identifying word boundaries and was our first step in the process. Stop-word removal was applied using the same library, eliminating common words \textit{("the", "is", "at" and more...)} that does not contribute any significant meaning to the text when used in conjunction with ML and LLMs. The text was further cleaned from any punctuations and symbols.    
+\end{comment}
+
+\textbf{Data Acquisition and Preparation}
+
+In collaboration with UPTILT, we obtained access to a dataset comprising anonymized Work Orders (WOs). These WOs originated from real-world service business operations and contained unstructured textual data as described previously (see Background section), including elements such as task descriptions, operational instructions, and material lists, all lacking a predefined structure.
+
+To prepare this raw data for controlled experimentation and subsequent analysis, particularly for use with Machine Learning (ML) and Large Language Models (LLMs), a dedicated data preprocessing pipeline was implemented using Python. This pipeline served to structure, clean, and normalize the textual content. The implementation primarily utilized the Pandas library for data manipulation and the Natural Language Toolkit (NLTK) \cite{bird2009nlp} for core text processing functionalities.
+
+As a prerequisite, the pipeline ensured necessary NLTK resources were available by automatically downloading the 'stopwords' corpus and the 'punkt' tokenizer models via the \verb|nltk.downloader| module.
+
+The core data processing workflow involved the following key stages:
+
+\begin{enumerate}
+    \item \textbf{Loading and Structuring:} WO data was loaded from various JSON formats (files, strings, or objects) and structured into a tabular Pandas DataFrame.
+    \item \textbf{Selective Text Extraction:} Relevant textual content was selectively extracted from predefined fields (keys) within each record, focusing only on scalar values suitable for conversion to text.
+    \item \textbf{Text Normalization:} Each extracted text segment underwent a standardized cleaning sequence: conversion to lowercase, removal of punctuation and symbols (retaining alphanumeric content), and filtering of common English stop words identified via NLTK.
+    \item \textbf{Consolidation and Filtering:} The cleaned text segments from the relevant fields of each WO were concatenated into a single string. Records yielding an empty string after this process were subsequently removed.
+\end{enumerate}
+
 
 To facilitate a fair and reproducible comparison across multiple configurations, the dataset was then randomly divided using a fixed-seed splitting method rooted in digits of pi into two distinct subsets: training (~80\%) and testing (~20\%). The training set was used to train (or in the case of LLMs, prompt-engineer and fine-tune prompts for) classification models, while the testing dataset was reserved strictly for their performance evaluation.
 
