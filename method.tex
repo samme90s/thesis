@@ -36,9 +36,9 @@ Before starting the iterations of the experiment, we further cleaned the dataset
 \end{comment}
 
 In collaboration with UPTILT, we obtained access to a dataset comprising anonymized Work Orders (WOs). These WOs originated from real-world service business operations and contained unstructured textual data, including elements such as task descriptions, operational instructions, and material lists, all lacking a predefined structure.
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=1\linewidth]{images/fig4.png}
+    \includegraphics[width=1\linewidth]{img/fig4.png}
     \caption{Work order example}
     \label{fig:enter-label}
 \end{figure}
@@ -68,7 +68,7 @@ The core data processing workflow involved the following key stages:
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/fig2.png}
+    \includegraphics[width=0.8\linewidth]{img/fig2.png}
     \caption{Example of an unprocessed news article}
     \label{fig:enter-label}
 \end{figure}
@@ -91,16 +91,16 @@ To facilitate a fair and reproducible comparison across multiple configurations,
 % Discuss the computational resources required (e.g., GPUs, cloud services).
 %
 % Use references to support our choices here!
+For our text classification task, we decided to compare two different types of models: Support Vector Machines (SVM), which is a well-known traditional machine learning algorithm, and Large Language Models (LLMs) like GPT, which represent newer deep learning methods.
 
+Traditional methods like SVM have been used a lot for text classification in the past. They work by finding the best boundary to separate different categories of text. However, they usually need us to carefully create numerical features from the text first (like TF-IDF scores) and often require a good amount of labeled data to learn effectively. They might also struggle to fully capture the meaning that comes from the specific order of words in sentences \cite{sarker2021machine}.
 
+We chose SVM as a strong baseline model for our experiments. SVMs are known to work well, especially when dealing with text data that has been converted into high-dimensional feature vectors \cite{Joachims1998}. Including SVM allows us to compare a solid, traditional classification method against the more recent LLM approach, giving us a clear benchmark.
 
-For text classification, we selected long short-term memory (LSTM) algorithms and the later generative pretrained transformer (GPT) models based on their demonstrated effectiveness in prior research. Traditional machine learning (ML) models such as logistic regression, random forests, and naive bayes have been widely applied in text classification but typically require features and extensive labeled data to perform well. While these models have been useful, they struggle with capturing sequential dependencies and handling domain shifts effectively \cite{sarker2021machine}.
+In contrast, Large Language Models (LLMs), such as OpenAI's GPT-4 or Meta's LLaMA, are built using the Transformer architecture and are pre-trained on massive amounts of text. This pre-training gives them a broad understanding of language, allowing them to perform well on new tasks often with very little (few-shot) or sometimes even no (zero-shot) specific examples from our dataset \cite{brown2020language, touvron2023llama}. Studies consistently show that LLMs frequently outperform traditional ML models like SVMs on various text classification tasks \cite{moller2024parrot, betianu2024dallmi}. Fine-tuning an LLM can boost its accuracy even further. Another advantage is that LLMs can often work directly with text, reducing the need for complex data preprocessing and feature creation steps that SVMs require \cite{oh2024language}.
 
-Deep learning approaches (recurrent neural networks (RNNs) and long short term memory algorithms) have shown state-of-the-art performance by capturing long-range dependencies in text \cite{sutskever2014sequence}. LSTMs, in particular, are known for their ability to mitigate vanishing gradient issues that affect standard RNNs, making them well-suited for text classification tasks \cite{hochreiter1997long}. Despite their advantages, LSTMs still require substantial labeled datasets to generalize across different domains effectively. Recent work has demonstrated that fine-tuning or introducing few-shot learning can significantly improve their adaptability \cite{jamshidi2024effective}.
+Therefore, our final selection was SVMs, representing a powerful classical approach that relies on feature representation, and GPT-based LLMs, representing the state-of-the-art in language understanding, known for their adaptability and few-shot learning capabilities. By comparing these two different methods – a traditional feature-based classifier (SVM) versus a pre-trained, context-aware language model (LLM) – we aim to answer our research questions (RQ1 and RQ2) about which approach works better for our specific text classification challenge.
 
-In contrast, large language models (LLMs) based on the Transformer architecture, such as GPT-4 from \textit{OpenAI} and LLaMA from \textit{Meta}, leverages pre training on many diverse datasets, enabling effective zero-shot and few-shot learning \cite{brown2020language, touvron2023llama}. Studies have consistently shown that LLMs outperform traditional machine learning and neural network based classifiers across various text classification tasks, including sentiment analysis, economic text classification, and spam detection \cite{moller2024parrot, betianu2024dallmi}. Fine-tuned LLMs achieve even higher classification accuracy and often surpasses deep learning models. Additionally, LLMs simplify classification pipelines by eliminating the need for extensive preprocessing and handcrafted feature engineering \cite{oh2024language}.
-
-Given these findings, we chose LSTMs for their proven effectiveness in sequence modeling and GPT-based models for their adaptability and few-shot classification capabilities. By choosing both LSTMs and LLMs, we can compare how well LSTMs handle structured word sequences versus how LLMs can adapt to different text classification tasks without needing extensive training and answer both of our research questions \textit{(RQ1, RQ2)}.
 
 \subsection{Variables}
 A variable is anything that can change or be changed—any factor that can be manipulated, controlled for, or measured in an experiment. In this study, we distinguish between two main types of variables: independent variables, which we manipulate to observe their effect, and dependent variables, which we measure to capture the outcomes.
@@ -118,7 +118,7 @@ $$
 $$
 
 \medskip
-Precision displays the model’s accuracy in predicting a particular label (also known as class).  In other words, it measures how often the model is correct when it predicts that label.  Was calculated as follows: where $\mathrm{TP}$ is the number of true positives and $\mathrm{FP}$ is the  number of false positives.
+Precision displays the model’s accuracy in predicting a particular label (also known as class).  In other words, it measures how often the model is correct when it predicts that label. The sum was calculated as follows: where $\mathrm{TP}$ is the number of true positives and $\mathrm{FP}$ is the number of false positives.
 
 $$
 \mathrm{Precision} 
@@ -142,22 +142,6 @@ $$
 
 % --------------------------------------------
 
-\subsection{Data analysis}
-% Step 3:
-% Describe the methods of analysis (how you processed and analyzed the data)
-%
-% A rigorous skepticism should be a part of every experiment:
-% - Is this really a correct (fair) comparison?
-% - Can we really draw these conclusions based on this experiment?
-% - Have we taken all independent variables into account?
-% - Are the measurements correct?
 
-\subsection{Research biases (reliability and validity)}
-% Step 4:
-% Evaluate and justify methodological choices
-%
-% Why you chose these particular methods?
-% Why other methods were not suitable for your objectives?
-% How this approach contributes new knowledge or understanding?
 
 Since we did not have access to a domain expert from the specific service business area, prompt construction was based on available domain documentation and published industry terminology in similar fields. To ensure correctness and appropriateness, we systematically referred to standard terminology used in similar industry reports and publicly available domain-specific resources throughout the prompt development stage. Although involving a domain expert is highly recommended, our documentation of each iteration still provides reproducibility. However, the absence of expert validation remains a limitation of our approach.
